@@ -6,6 +6,8 @@ const fs = require('fs');
 // create app
 let app = express();
 
+const port = process.env.PORT || 3000;
+
 // express has understand the default views folder (for template date render)
 //to render the template of handlebar // inject dynamic data
 app.set('view engine', 'hbs');
@@ -64,8 +66,8 @@ app.get('/bad', (req, res) => {
     });
 })
 // make it listen (make it running)
-app.listen(3000, () => {
-    console.log('server on port: localhost:3000')
+app.listen(port, () => {
+    console.log(`server on port: ${port}`)
 });
 
 //use a third party call handlebar.js, it is render template 
