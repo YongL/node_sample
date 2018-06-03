@@ -55,6 +55,14 @@ app.get('/about', (req, res) => {
     })
 });
 
+// get project
+app.get('/project', (req, res) => {
+    res.render('project.hbs', {
+        pageTitle: 'project page',
+        currentYear: new Date().getFullYear()
+    })
+})
+
 
 // /bad - send back json with errorMessage
 
